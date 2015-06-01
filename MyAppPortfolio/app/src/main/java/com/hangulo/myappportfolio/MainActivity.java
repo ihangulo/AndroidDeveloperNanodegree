@@ -20,6 +20,8 @@ import android.widget.Toast;
     My App Portfolio - Instructions
     Project
 
+    Passed 31 MAY 2015
+
  */
 
 public class MainActivity extends ActionBarActivity
