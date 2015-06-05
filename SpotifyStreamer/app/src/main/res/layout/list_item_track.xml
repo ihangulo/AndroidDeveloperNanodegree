@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+              >
+    <ImageView
+        android:layout_width="@dimen/thumbnail_width"
+        android:layout_height="@dimen/thumbnail_height"
+        android:id="@+id/list_item_track_image"
+        android:layout_weight="1" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft = "@dimen/textitem_margin_left"
+        android:layout_marginTop = "@dimen/textitem_margin_top"
+        android:layout_marginRight= "@dimen/textitem_margin_right"
+        android:layout_marginBottom = "@dimen/textitem_margin_bottom"
+        android:id="@+id/list_item_track_name"
+        android:layout_toRightOf="@id/list_item_track_image"
+        android:layout_alignParentRight="true"
+        android:layout_weight="4"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft = "@dimen/textitem_margin_left"
+        android:layout_marginRight= "@dimen/textitem_margin_right"
+        android:layout_marginBottom = "@dimen/textitem_margin_bottom"
+
+        android:id="@+id/list_item_track_album_name"
+        android:layout_below ="@id/list_item_track_name"
+        android:layout_toRightOf="@id/list_item_track_image"
+        />
+
+</RelativeLayout>

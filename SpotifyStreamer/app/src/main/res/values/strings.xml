@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Spotify Streamer</string>
+    <string name="title_activity_toptracks">Top 10 Tracks</string>
+    <string name="title_activity_settings">Settings</string>
+
+
+    <string name = "unknown_artist">Unknown artist</string>
+    <string name = "msg_input_artist">Please type artist name here.</string>
+    <string name = "msg_no_data_null">Error : No data (null). Please, search again.</string>
+    <string name = "msg_there_is_no_artist">Sorry. There is no artist. Please, search again.</string>
+    <string name = "msg_there_is_no_track_of">Sorry. There is no track of </string>
+    <string name = "msg_pls_search_other_track">Please select other track.</string>
+    <string name = "msg_not_yet_play_soon">"Not yet! But play soon.. song - "</string>
+
+
+</resources>
+
