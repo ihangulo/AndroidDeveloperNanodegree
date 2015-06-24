@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Search, should appear as action button -->
+    <item android:id="@+id/action_now_playing"
+          android:icon="@android:drawable/ic_dialog_info"
+          android:title="@string/action_now_playing"
+          app:showAsAction="always"
+          android:visible="false"
+        />
+    <item
+        android:id="@+id/action_share_menu"
+        app:showAsAction="ifRoom"
+        android:visible="false"
+        android:title="Share"
+        app:actionProviderClass="android.support.v7.widget.ShareActionProvider"/>
+
+    <!-- Settings, should always be in the overflow -->
+    <item android:id="@+id/action_settings"
+          android:title="@string/action_settings"
+          app:showAsAction="never"
+        />
+
+</menu>

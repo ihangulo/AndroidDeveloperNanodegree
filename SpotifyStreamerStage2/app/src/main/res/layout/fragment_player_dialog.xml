@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scrollView"
+    android:layout_gravity="center_horizontal">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_player_framelayout"
+        tools:ignore="MergeRootFrame"
+        android:background="@android:color/white">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:minWidth = "300dp"
+            android:maxWidth = "350dp"
+            android:layout_height="match_parent"
+            android:id="@+id/nowplay"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="350dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textview_player_artist_name"
+                android:scrollHorizontally="true"
+                android:layout_gravity="center_horizontal"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="350dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:scrollHorizontally="true"
+                android:id="@+id/textview_player_album_name"
+                android:layout_gravity="center_horizontal"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                />
+
+
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:id="@+id/imageview_player_album_artwork"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/nowloading"/>
+
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                >
+
+                <com.hangulo.spotifystreamer.MarqueeTextView
+                    android:layout_width="0dp"
+                    android:layout_weight="10"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:focusable="false"
+                    android:scrollHorizontally="true"
+                    android:id="@+id/textview_player_track_name"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:layout_gravity="center"/>
+
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:minWidth="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/imagebutton_player_share"
+                    android:src="@drawable/ic_share_black_24dp"
+                    android:clickable="true"
+                    android:contentDescription="@string/action_share"
+                    android:layout_marginRight="4dp" />
+            </LinearLayout>
+
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/seekBar_player"
+                />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="0:00"
+                    android:id="@+id/textview_player_current"
+                    android:layout_gravity="center_horizontal"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="0:30"
+                    android:id="@+id/textview_player_duration"
+                    android:layout_gravity="center_horizontal"
+
+                    android:gravity="right"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp">
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="56dp"
+                    android:id="@+id/button_player_prev"
+                    android:src="@android:drawable/ic_media_previous"
+                    android:clickable="true"
+                    android:layout_marginRight="12dp"
+                    />
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="56dp"
+                    android:id="@+id/button_player_play"
+                    android:src="@android:drawable/ic_media_play"
+                    android:clickable="true"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginLeft="12dp"/>
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="56dp"
+                    android:id="@+id/button_player_next"
+                    android:src="@android:drawable/ic_media_next"
+                    android:clickable="true"
+                    android:layout_marginLeft="12dp"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progress_player"
+            android:visibility="invisible"
+            android:layout_gravity="center"
+            android:indeterminate="false"/>
+
+    </FrameLayout>
+</ScrollView>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Large screen boolean values
+http://developer.android.com/guide/topics/ui/dialogs.html -->
+<resources>
+    <bool name="two_pane">true</bool>
+</resources>

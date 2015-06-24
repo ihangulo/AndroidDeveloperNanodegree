@@ -62,6 +62,10 @@ public class ArtistFragment extends Fragment
         mListViewArtist = (ListView) rootView.findViewById(R.id.listview_artist);
         mEditTextSearch = (EditText) rootView.findViewById(R.id.search_artist_name); // search keyword
 
+        // set empty view (2015.6.8)
+        View emptyView = rootView.findViewById(R.id.list_artist_emtpy); // set empty view
+        mListViewArtist.setEmptyView(emptyView);
+
         mEditTextSearch.setOnKeyListener(new View.OnKeyListener()
         {
             @Override
@@ -73,7 +77,13 @@ public class ArtistFragment extends Fragment
                 {
                     // Perform action on key press
                     // Toast.makeText(getActivity(), mEditTextSearch.getText(), Toast.LENGTH_SHORT).show();
-                    searchAndUpdateList(mEditTextSearch.getText().toString()); // Search it!
+
+                    String myArtist = mEditTextSearch.getText().toString().trim(); // get artist name (remove space)
+                    if (myArtist != null) // if there is only keyword // prevent null exception
+                      if(myArtist.length()>0)
+                        searchAndUpdateList(myArtist); // Search it!
+
+                    // must change this routine
                     mEditTextSearch.clearFocus(); // remove focus
                     InputMethodManager imm =
                             (InputMethodManager) v.getContext().getSystemService(Context.INPUT_METHOD_SERVICE); // remove keyboard
@@ -205,11 +215,23 @@ public class ArtistFragment extends Fragment
             // Spotify web API structure
             // https://github.com/kaaes/spotify-web-api-android/blob/master/src/main/java/kaaes/spotify/webapi/android/SpotifyService.java
 
-            SpotifyApi api = new SpotifyApi();
-            SpotifyService spotify = api.getService();
-            ArtistsPager results = spotify.searchArtists(params[0]); // https://developer.spotify.com/web-api/search-item/
+            String myArtist = params[0];
 
-            return results;
+            if (myArtist != null) // prevent null exception
+            {
+                if(myArtist.length()>0) // only more than 1 char
+                {
+                    SpotifyApi api = new SpotifyApi();
+                    SpotifyService spotify = api.getService();
+                    ArtistsPager results = spotify.searchArtists(params[0]); // https://developer.spotify.com/web-api/search-item/
+
+                    return results;
+                }
+            }
+
+            return null; // error
+
+
         }
 
 
